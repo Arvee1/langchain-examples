@@ -13,10 +13,11 @@ st.subheader('Wazzup!!! What do you want Search for?')
     # serpapi_api_key = st.text_input("SERP API Key", type="password")
     # st.caption("*If you don't have a SERP API key, get it [here](https://serpapi.com).*")
 
-os.environ["SERPER_API_KEY"] = st.secrets["serp_key"]
+# os.environ["SERPER_API_KEY"] = st.secrets["serp_key"]
 openai_api_key = st.secrets["api_key"]
-serpapi_api_key = os.environ["SERPER_API_KEY"]
+serpapi_api_key = st.secrets["serp_key"]
 search_query = st.text_input("Search Query")
+print(serper_api_key)
 
 # If the 'Search' button is clicked
 if st.button("Search"):
