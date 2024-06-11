@@ -13,9 +13,9 @@ st.subheader('Wazzup!!! What do you want to Search for?')
     # st.caption("*If you don't have a SERP API key, get it [here](https://serpapi.com).*")
 
 openai_api_key = st.secrets["api_key"]
-serper_api_key = st.secrets["serp_api"]
+serpapi_api_key = st.secrets["serp_api"]
 st.session_state.openai_api_key = openai_api_key
-st.session_state.serper_api_key = serper_api_key
+st.session_state.serper_api_key = serpapi_api_key
 search_query = st.text_input("Search Query")
 
 # If the 'Search' button is clicked
