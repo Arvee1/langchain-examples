@@ -21,14 +21,14 @@ search_query = st.text_input("Search Query")
 # If the 'Search' button is clicked
 try:
     with st.spinner('Please wait...'):
-      # Initialize the OpenAI module, load the SerpApi tool, and run the search query using an agent
-          llm = ChatOpenAI(temperature=0, openai_api_key=openai_api_key, verbose=True)
-          tools = load_tools(["serpapi"], llm, serpapi_api_key=serpapi_api_key)
-          agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
-          result = agent.run(search_query)
-          st.success(result)
-    except Exception as e:
-        st.exception(f"An error occurred: {e}")
+    # Initialize the OpenAI module, load the SerpApi tool, and run the search query using an agent
+    llm = ChatOpenAI(temperature=0, openai_api_key=openai_api_key, verbose=True)
+    tools = load_tools(["serpapi"], llm, serpapi_api_key=serpapi_api_key)
+    agent = initialize_agent(tools, llm, agent="zero-shot-react-description", verbose=True)
+    result = agent.run(search_query)
+    st.success(result)
+except Exception as e:
+    st.exception(f"An error occurred: {e}")
 
 
 # if st.button("Search"):
