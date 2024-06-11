@@ -6,8 +6,8 @@ from langchain_community.document_loaders import  UnstructuredURLLoader
 from langchain_community.utilities import GoogleSerperAPIWrapper
 
 # Set API keys from session state
-openai_api_key = st.session_state.openai_api_key
-serper_api_key = st.session_state.serper_api_key
+openai_api_key = st.secrets["api_key"]
+serper_api_key = st.secrets["serp_api"]
 
 # Streamlit app
 st.subheader('News Summary')
