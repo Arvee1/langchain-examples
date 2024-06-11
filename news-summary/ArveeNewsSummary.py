@@ -10,7 +10,7 @@ openai_api_key = st.secrets["api_key"]
 serper_api_key = st.secrets["serp_api"]
 
 # Streamlit app
-st.subheader('News Summary')
+st.subheader('Wazzupp!!! What latest News Articles to search for and Summarise?')
 col1, col2 = st.columns([3, 1])
 search_query = col1.text_input("Search Query")
 num_results = col2.number_input("Number of Results", min_value=3, max_value=10) 
