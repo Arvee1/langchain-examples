@@ -15,7 +15,7 @@ st.subheader('Wazzup!!! What do you want Search for?')
 
 os.environ["SERPER_API_KEY"] = st.secrets["serp_key"]
 openai_api_key = st.secrets["api_key"]
-serpapi_api_key = st.secrets["serp_key"]
+serpapi_api_key = os.environ["SERPER_API_KEY"]
 search_query = st.text_input("Search Query")
 
 # If the 'Search' button is clicked
