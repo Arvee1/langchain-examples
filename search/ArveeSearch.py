@@ -3,14 +3,19 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import load_tools, initialize_agent
 
 # Streamlit app
-st.subheader('LangChain Search')
+st.subheader('Wazzup!!! What do you want to Search for?')
 
 # Get OpenAI API key, SERP API key and search query
-with st.sidebar:
-    openai_api_key = st.text_input("OpenAI API key", value="", type="password")
-    st.caption("*If you don't have an OpenAI API key, get it [here](https://platform.openai.com/account/api-keys).*")
-    serpapi_api_key = st.text_input("SERP API Key", type="password")
-    st.caption("*If you don't have a SERP API key, get it [here](https://serpapi.com).*")
+# with st.sidebar:
+    # openai_api_key = st.text_input("OpenAI API key", value="", type="password")
+    # st.caption("*If you don't have an OpenAI API key, get it [here](https://platform.openai.com/account/api-keys).*")
+    # serpapi_api_key = st.text_input("SERP API Key", type="password")
+    # st.caption("*If you don't have a SERP API key, get it [here](https://serpapi.com).*")
+
+openai_api_key = st.secrets["api_key"]
+serper_api_key = st.secrets["serp_api"]
+st.session_state.openai_api_key = openai_api_key
+st.session_state.serper_api_key = serper_api_key
 search_query = st.text_input("Search Query")
 
 # If the 'Search' button is clicked
